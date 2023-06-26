@@ -1,0 +1,133 @@
+@import url(common.css);
+
+/* 下余白:10px、行の高さ:1.5 */
+main article > p {
+  padding-bottom: 10px;
+  /* ↓モバイルで見るときに改行されても読みやすくするため */
+  line-height: 1.5;
+}
+
+/* 文字サイズ:14px、行の高さ:1.5、行頭文字:・、外側左余白:1.5em、下余白:20px */
+main aside ul {
+  font-size: 14px;
+  line-height: 1.5;
+  /* liタグにも使用可能。項目ごとに違う文字を設定することが可能 */
+  list-style-type: disc;
+  /* ↓行頭文字でずれる分をずらすため */
+  margin-left: 1.5em;
+  padding-bottom: 20px;
+}
+
+/* 幅:80%、中央配置 */
+main form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: cadetblue; */
+}
+
+/* FlexBox、下余白:20px、縦方向の位置:ベースライン */
+main dl div {
+  display: flex;
+  padding-bottom: 20px;
+  /* タイトルと枠（1行目）の高さを同じにする */
+  align-items: baseline;
+}
+
+/* 太字、幅:12em
+全角12文字分*/
+main dt {
+  font-weight: bold;
+  flex-basis: 12em;
+}
+
+/* 文字サイズ:11px、左余白:5px */
+main dt span {
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+/* 幅比率:auto */
+main dd {
+  /* background-color: darkolivegreen; */
+  flex: auto;
+}
+
+/* 幅:100%、内側余白:8px、アウトライン:なし */
+main input[type="text"],
+main input[type="email"],
+main textarea {
+  width: 100%;
+  padding: 8px;
+  outline: none;
+}
+
+/* 右余白:10px */
+main dd label {
+  padding-right: 10px;
+}
+
+/* 高さ:12em、行の高さ:1.5、リサイズ:垂直 */
+main textarea {
+  height: 12em;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* 縦方向の位置:上、内側上余白:15px
+内容のタイトルと枠の高さを調整 */
+main dl div:last-child dt {
+  align-self: flex-start;
+  padding-top: 15px;
+}
+
+/* 上ボーダー:1px 直線 #666、内側上余白:20px、中央揃え */
+main form p {
+  border-top: 1px solid #666;
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* 内側上下余白:10px、内側左右余白:30px、文字間隔:8px、ボーダー:1px 直線 #666、背景色:#fff、角丸:30px、マウスカーソル:リンク */
+main form button {
+  padding: 10px 22px 10px 30px;
+  /* ↓文字一つ一つの余白。右側に余白がつくため、paddingの数値を調整する */
+  letter-spacing: 8px;
+  border: 1px solid #666;
+  background-color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* 不透明度:0.7 */
+main form button:hover {
+  opacity: 0.7;
+}
+
+/*--------------
+  レスポンシブ
+--------------*/
+/* スマホの書式 */
+@media (max-width: 767px) {
+  /* 幅:auto */
+  main form {
+    width: auto;
+    /* ↑またはwidth: unset; 等。100%になるようにする*/
+  }
+}
+
+/* スマホ縦の書式 */
+@media (max-width: 575px) {
+  /* ブロック表示 */
+  main dl div {
+    display: block;
+  }
+
+  /* 内側上余白:15px、下ボーダー:1px 直線 #666、内側下余白:5px、外側下余白:10px */
+  main dt {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #666;
+  }
+}
